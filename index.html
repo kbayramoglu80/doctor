@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Doç. Dr. Mesut Karıksız'ın ortopedi ve travmatoloji alanındaki mesleki deneyimi, akademik çalışmaları ve iletişim bilgileri.">
+  <meta name="theme-color" content="#f7f4ed">
+  <title>Doç. Dr. Mesut Karıksız | Ortopedi ve Travmatoloji</title>
+  <link rel="stylesheet" href="fonts.css">
+  <style>
+    :root {
+      --paper: #f7f4ed;
+      --ink: #2e2a24;
+      --dim: #514d46;
+      --line: rgba(46, 42, 36, .16);
+      --sage: #66715d;
+      --deep: #353d32;
+      --gold: #a6885a;
+      --cream: #f2eee4;
+      --serif: "Cormorant", Georgia, serif;
+      --sans: "Montserrat", Arial, sans-serif;
+      --gap: clamp(22px, 6vw, 92px);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 600 18px/1.7 var(--serif);
+      overflow-x: hidden;
+    }
+    ::selection { background: var(--gold); color: var(--paper); }
+    a { color: inherit; text-decoration: none; }
+    a:focus-visible, summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 5px; }
+    .wrap { width: min(1380px, 100%); margin: 0 auto; padding-left: var(--gap); padding-right: var(--gap); }
+    .eyebrow {
+      color: var(--dim);
+      font: 700 11px/1.7 var(--sans);
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+    .section-title {
+      margin: 12px 0 0;
+      font: 700 clamp(32px, 4vw, 58px)/1.12 var(--serif);
+      letter-spacing: .025em;
+    }
+    .section-intro { max-width: 700px; color: var(--dim); }
+
+    .navbar {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 78px;
+      padding: 14px var(--gap);
+      background: rgba(247, 244, 237, .95);
+      border-bottom: 1px solid transparent;
+      transition: border-color .25s, box-shadow .25s;
+    }
+    .navbar.scrolled { border-color: var(--line); box-shadow: 0 8px 26px rgba(46, 42, 36, .04); }
+    .brand { font: 700 20px/1 var(--serif); letter-spacing: .12em; white-space: nowrap; }
+    .brand strong { color: var(--gold); font-weight: 700; }
+    .menu-toggle {
+      display: grid;
+      gap: 5px;
+      place-content: center;
+      width: 44px;
+      height: 44px;
+      padding: 10px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--ink);
+      cursor: pointer;
+    }
+    .menu-toggle span {
+      display: block;
+      width: 21px;
+      height: 2px;
+      background: currentColor;
+      transition: transform .2s, opacity .2s;
+    }
+    .navbar.menu-open .menu-toggle span:first-child { transform: translateY(3.5px) rotate(45deg); }
+    .navbar.menu-open .menu-toggle span:nth-child(2) { opacity: 0; }
+    .navbar.menu-open .menu-toggle span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
+    .nav-links {
+      position: absolute;
+      top: calc(100% + 1px);
+      right: var(--gap);
+      display: flex;
+      flex-direction: column;
+      min-width: min(280px, calc(100vw - 2 * var(--gap)));
+      padding: 8px 20px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      box-shadow: 0 16px 36px rgba(46, 42, 36, .12);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transition: opacity .2s, transform .2s, visibility .2s;
+    }
+    .navbar.menu-open .nav-links { opacity: 1; visibility: visible; transform: none; }
+    .nav-links a {
+      padding: 13px 0;
+      border-bottom: 1px solid var(--line);
+      color: var(--dim);
+      font: 700 10px/1.5 var(--sans);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      transition: color .2s;
+    }
+    .nav-links a:last-child { border-bottom: 0; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-links .admin-link { color: var(--sage); }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      align-items: center;
+      gap: clamp(36px, 8vw, 120px);
+      min-height: 720px;
+      min-height: min(900px, 100svh);
+      padding-top: 115px;
+      padding-bottom: 70px;
+    }
+    .hero h1 {
+      max-width: 780px;
+      margin: 16px 0 22px;
+      font: 700 clamp(48px, 7.5vw, 108px)/.98 var(--serif);
+      letter-spacing: -.025em;
+    }
+    .hero h1 span { display: block; color: var(--sage); }
+    .hero-subtitle { max-width: 570px; color: var(--dim); font-size: clamp(19px, 2vw, 24px); font-weight: 600; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 12px 24px; margin-top: 34px; }
+    .hero-meta span {
+      padding-left: 13px;
+      border-left: 1px solid var(--gold);
+      color: var(--dim);
+      font: 700 10px/1.7 var(--sans);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .hero-visual {
+      position: relative;
+      min-height: 460px;
+      overflow: hidden;
+      border-radius: 48% 48% 2px 2px;
+    }
+    .hero-visual img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .hero-visual::after {
+      position: absolute;
+      content: "";
+      inset: 45% 0 0;
+      background: linear-gradient(transparent, rgba(20, 24, 19, .5));
+    }
+    .visual-caption {
+      position: absolute;
+      z-index: 1;
+      bottom: 30px;
+      left: 30px;
+      right: 30px;
+      color: rgba(242, 238, 228, .76);
+      font: 700 10px/1.8 var(--sans);
+      letter-spacing: .18em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      margin-top: 26px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid var(--gold);
+      font: 700 10px/1.7 var(--sans);
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+    .text-link:hover { color: var(--sage); }
+
+    .about { padding-top: 100px; padding-bottom: 115px; border-top: 1px solid var(--line); text-align: center; }
+    .about blockquote {
+      max-width: 920px;
+      margin: 24px auto;
+      font: 700 clamp(27px, 3.5vw, 47px)/1.38 var(--serif);
+    }
+    .about p { max-width: 760px; margin: 0 auto; color: var(--dim); font-weight: 600; }
+    .about .eyebrow { display: block; margin-top: 30px; }
+
+    .treatments {
+      padding: clamp(72px, 9vw, 120px) 0;
+      background:
+        radial-gradient(ellipse at 12% 8%, rgba(166, 136, 90, .09), transparent 34%),
+        linear-gradient(180deg, #f1eee6, #ebe8de);
+    }
+    .treatments-inner { width: min(1180px, calc(100% - 2 * var(--gap))); margin: 0 auto; }
+    .treatments-head { margin-bottom: 36px; text-align: center; }
+    .treatments-head .eyebrow { color: var(--sage); }
+    .treatment-tabs {
+      display: flex;
+      justify-content: center;
+      gap: clamp(4px, 1vw, 12px);
+      overflow-x: auto;
+      scrollbar-width: none;
+      border-bottom: 1px solid rgba(46, 42, 36, .16);
+    }
+    .treatment-tabs::-webkit-scrollbar { display: none; }
+    .treatment-tab {
+      flex: 0 0 auto;
+      position: relative;
+      padding: 14px clamp(12px, 2.2vw, 28px) 16px;
+      border: 0;
+      background: transparent;
+      color: var(--dim);
+      cursor: pointer;
+      font: 700 10px/1.5 var(--sans);
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      transition: color .2s;
+    }
+    .treatment-tab::after {
+      position: absolute;
+      right: 18px;
+      bottom: -1px;
+      left: 18px;
+      height: 2px;
+      background: var(--gold);
+      content: "";
+      transform: scaleX(0);
+      transition: transform .25s ease;
+    }
+    .treatment-tab[aria-selected="true"] {
+      color: var(--deep);
+    }
+    .treatment-tab[aria-selected="true"]::after { transform: scaleX(1); }
+    .treatment-tab:hover { color: var(--ink); }
+    .treatment-tab:focus-visible { outline: 2px solid var(--gold); outline-offset: -3px; }
+    .treatment-panel {
+      min-height: 300px;
+      padding: clamp(24px, 4.5vw, 54px);
+      border: 1px solid rgba(46, 42, 36, .1);
+      border-top: 0;
+      background: rgba(247, 244, 237, .92);
+      box-shadow: 0 22px 50px rgba(46, 42, 36, .055);
+    }
+    .treatment-panel[hidden] { display: none; }
+    .treatment-panel > h3 {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 0 0 24px;
+      font: 700 clamp(24px, 3vw, 34px)/1.2 var(--serif);
+    }
+    .treatment-panel > h3::before { width: 28px; height: 1px; background: var(--gold); content: ""; }
+    .treatment-panel-intro { margin: -8px 0 24px; color: var(--dim); font-weight: 600; }
+    .treatment-accordion { display: grid; gap: 12px; }
+    .treatment-accordion details {
+      overflow: hidden;
+      border: 1px solid rgba(46, 42, 36, .13);
+      background: #f2efe7;
+      transition: border-color .2s, background .2s;
+    }
+    .treatment-accordion details[open] { border-color: rgba(102, 113, 93, .38); background: #f8f6f0; }
+    .treatment-accordion summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 17px 20px;
+      cursor: pointer;
+      color: var(--deep);
+      font: 700 11px/1.5 var(--sans);
+      letter-spacing: .13em;
+      list-style: none;
+      text-transform: uppercase;
+    }
+    .treatment-accordion summary::-webkit-details-marker { display: none; }
+    .treatment-accordion summary::after { color: var(--gold); content: "+"; font: 400 22px/1 var(--serif); }
+    .treatment-accordion details[open] summary::after { content: "−"; }
+    .treatment-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 205px), 1fr)); gap: 14px; }
+    .treatment-accordion .treatment-cards { padding: 0 18px 20px; }
+    .treatment-card {
+      position: relative;
+      min-height: 124px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px 20px 18px;
+      border: 1px solid rgba(46, 42, 36, .12);
+      background: #fbf9f4;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .treatment-card.has-image { justify-content: flex-start; gap: 0; overflow: hidden; padding: 0 0 18px; }
+    .treatment-card.has-image::before { display: none; }
+    .treatment-card-image { display: block; width: 100%; height: 145px; object-fit: cover; }
+    .treatment-card-image.shoulder-image, .treatment-card-image.prosthesis-image, .treatment-card-image.specialty-image { object-fit: contain; background: #e9e5da; }
+    .treatment-card::before { position: absolute; top: -1px; left: 20px; width: 34px; height: 2px; background: var(--gold); content: ""; }
+    .treatment-card:hover { transform: translateY(-3px); border-color: rgba(102, 113, 93, .4); box-shadow: 0 12px 24px rgba(46, 42, 36, .07); }
+    .treatment-card span { color: var(--sage); font: 700 9px/1.5 var(--sans); letter-spacing: .14em; }
+    .treatment-card h4 { margin: 24px 0 0; font: 700 21px/1.25 var(--serif); }
+    .treatment-card.has-image span, .treatment-card.has-image h4 { margin-right: 16px; margin-left: 16px; }
+    .treatment-card.has-image span { margin-top: 14px; }
+    .treatment-card.has-image h4 { margin-top: 8px; }
+    .treatment-note { margin: 24px 0 0; color: var(--dim); font-size: 14px; font-weight: 600; }
+
+    .before-after { padding-top: 15px; padding-bottom: 105px; }
+    .before-after-head { margin-bottom: 34px; text-align: center; }
+    .before-after-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+    .case-card { margin: 0; overflow: hidden; background: #e9e5da; }
+    .case-card img { display: block; width: 100%; height: auto; }
+    .case-card figcaption { padding: 18px 22px 20px; }
+    .case-card h3 { margin: 0 0 12px; font: 700 22px/1.3 var(--serif); }
+    .case-labels { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .case-labels span {
+      padding-top: 8px;
+      border-top: 1px solid rgba(46, 42, 36, .22);
+      color: var(--dim);
+      font: 700 10px/1.6 var(--sans);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .case-note { margin: 25px auto 0; color: var(--dim); font-size: 14px; font-weight: 600; text-align: center; }
+
+    .expertise { padding-top: 105px; padding-bottom: 115px; border-top: 1px solid var(--line); }
+    .expertise-head { display: flex; justify-content: space-between; align-items: end; gap: 28px; margin-bottom: 50px; }
+    .expertise-head .section-intro { max-width: 430px; margin-bottom: 3px; }
+    .expertise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .expertise-card { min-height: 205px; padding: 28px clamp(20px, 3vw, 42px); background: var(--paper); }
+    .expertise-card .number { color: var(--gold); font: 700 10px/1 var(--sans); letter-spacing: .12em; }
+    .expertise-card h3 { margin: 25px 0 8px; font: 700 clamp(21px, 2vw, 27px)/1.2 var(--serif); }
+    .expertise-card p { margin: 0; color: var(--dim); font-size: 16px; font-weight: 600; line-height: 1.6; }
+
+    .career { padding: 105px 0 115px; background: var(--deep); color: var(--cream); }
+    .career .eyebrow, .career .section-intro { color: rgba(242, 238, 228, .88); }
+    .career-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(42px, 9vw, 130px); }
+    .career-list { border-top: 1px solid rgba(242, 238, 228, .22); }
+    .career-item { display: grid; grid-template-columns: 110px 1fr; gap: 24px; padding: 22px 0; border-bottom: 1px solid rgba(242, 238, 228, .22); }
+    .career-year { color: #e4c997; font: 700 11px/1.8 var(--sans); letter-spacing: .08em; }
+    .career-item h3 { margin: 0 0 5px; font: 700 23px/1.25 var(--serif); }
+    .career-item p { margin: 0; color: rgba(242, 238, 228, .9); font-size: 16px; font-weight: 600; }
+    .memberships { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 30px; }
+    .memberships span { padding: 7px 11px; border: 1px solid rgba(242, 238, 228, .38); color: rgba(242, 238, 228, .95); font: 700 9px/1.5 var(--sans); letter-spacing: .06em; }
+
+    .publications { padding-top: 105px; padding-bottom: 115px; }
+    .publication-list { margin-top: 45px; border-top: 1px solid var(--line); }
+    .publication {
+      display: grid;
+      grid-template-columns: 72px 1fr auto;
+      align-items: start;
+      gap: 22px;
+      padding: 23px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .publication-year { color: var(--gold); font: 700 11px/1.8 var(--sans); letter-spacing: .08em; }
+    .publication h3 { margin: 0; font: 700 clamp(19px, 2vw, 25px)/1.35 var(--serif); }
+    .publication p { margin: 6px 0 0; color: var(--dim); font-size: 15px; font-weight: 600; }
+    .publication a { align-self: center; color: var(--sage); font: 700 10px/1.7 var(--sans); letter-spacing: .06em; white-space: nowrap; }
+    .publication a:hover { text-decoration: underline; }
+
+    .blog { padding-top: 100px; padding-bottom: 110px; background: #e9e5da; }
+    .blog-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; }
+    .blog-admin-link { color: var(--sage); font: 700 10px/1.7 var(--sans); letter-spacing: .08em; }
+    .blog-admin-link:hover { text-decoration: underline; }
+    .blog-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 35px; }
+    .blog-card { padding: 24px; background: var(--paper); border: 1px solid var(--line); }
+    .blog-card img { display: block; width: 100%; aspect-ratio: 16 / 9; margin: -24px -24px 20px; width: calc(100% + 48px); object-fit: cover; }
+    .blog-card time { color: var(--dim); font: 700 10px/1.7 var(--sans); letter-spacing: .08em; }
+    .blog-card h3 { margin: 12px 0 8px; font: 700 24px/1.25 var(--serif); }
+    .blog-card p { margin: 0; color: var(--dim); font-size: 16px; font-weight: 600; }
+    .blog-card .blog-content { margin-top: 16px; white-space: pre-line; }
+    .blog-empty { grid-column: 1 / -1; color: var(--dim); font-weight: 600; }
+
+    .contact { padding: 100px 0 88px; background: #e9e5da; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: end; }
+    .contact-details { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 34px; }
+    .contact-details .eyebrow { display: block; margin-bottom: 6px; }
+    .contact-details a, .contact-details p { margin: 0; font-size: 17px; font-weight: 600; }
+    .contact-details a:hover { color: var(--sage); }
+    .hospital { padding: 26px 30px; border-left: 1px solid var(--gold); }
+    .hospital strong { display: block; font: 700 26px/1.2 var(--serif); }
+    .hospital p { margin: 9px 0 0; color: var(--dim); font-weight: 600; }
+    .contact-form { margin-top: 42px; padding: clamp(22px, 4vw, 38px); border: 1px solid var(--line); background: var(--paper); }
+    .contact-form h3 { margin: 0 0 20px; font: 700 30px/1.2 var(--serif); }
+    .contact-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .contact-form label { display: grid; gap: 6px; font: 700 10px/1.5 var(--sans); letter-spacing: .06em; }
+    .contact-form input, .contact-form textarea { width: 100%; padding: 12px 13px; border: 1px solid var(--line); background: #fffdf8; color: var(--ink); font: 500 16px/1.5 var(--serif); }
+    .contact-form textarea { min-height: 135px; resize: vertical; }
+    .contact-form input:focus, .contact-form textarea:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
+    .contact-form-full { grid-column: 1 / -1; }
+    .contact-form-note { margin: 16px 0; color: var(--dim); font-size: 14px; }
+    .contact-consent { display: flex !important; grid-template-columns: auto 1fr; align-items: flex-start; gap: 10px !important; letter-spacing: 0 !important; }
+    .contact-consent input { flex: 0 0 18px; width: 18px; height: 18px; margin: 2px 0 0; }
+    .contact-form-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 18px; }
+    .contact-form-actions button { min-height: 44px; padding: 10px 18px; border: 1px solid var(--deep); background: var(--deep); color: white; cursor: pointer; font: 700 10px/1.5 var(--sans); letter-spacing: .08em; text-transform: uppercase; }
+    .contact-form-actions button:disabled { opacity: .6; cursor: wait; }
+    .contact-form-message { min-height: 24px; margin: 0; color: var(--dim); font-weight: 600; }
+    .contact-form-message.error { color: #8b332c; }
+    .contact-form-message.success { color: #315e39; }
+    .contact-cta {
+      position: fixed;
+      z-index: 9;
+      right: clamp(16px, 3vw, 32px);
+      bottom: clamp(16px, 3vh, 28px);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 18px;
+      border: 1px solid var(--gold);
+      border-radius: 999px;
+      background: var(--deep);
+      color: var(--paper);
+      box-shadow: 0 8px 26px rgba(46, 42, 36, .2);
+      font: 700 10px/1.5 var(--sans);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      transition: opacity .2s, transform .2s, visibility .2s;
+    }
+    .contact-cta:hover { transform: translateY(-2px); }
+    .contact-cta-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+    .disclaimer { margin: 56px 0 0; padding-top: 18px; border-top: 1px solid var(--line); color: var(--dim); font-size: 14px; font-weight: 600; }
+    footer { padding: 22px var(--gap); background: var(--deep); color: rgba(242, 238, 228, .92); text-align: center; font: 700 9px/1.7 var(--sans); letter-spacing: .1em; text-transform: uppercase; }
+
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; min-height: 0; padding-top: 145px; }
+      .hero-copy { text-align: center; }
+      .hero h1, .hero-subtitle { margin-left: auto; margin-right: auto; }
+      .hero-meta { justify-content: center; }
+      .hero-visual { width: min(100%, 440px); min-height: 390px; margin: 0 auto; }
+      .treatment-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .before-after-grid { gap: 16px; }
+      .case-card figcaption { padding: 14px 16px 16px; }
+      .expertise-head { display: block; }
+      .expertise-head .section-intro { margin-top: 20px; }
+      .expertise-grid { grid-template-columns: repeat(2, 1fr); }
+      .blog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .blog-head { align-items: flex-start; flex-direction: column; }
+      .career-grid, .contact-grid { grid-template-columns: 1fr; }
+      .career-grid { gap: 38px; }
+      .hospital { padding-left: 20px; }
+    }
+    @media (max-width: 520px) {
+      body { font-size: 17px; }
+      .hero-visual { min-height: 330px; }
+      .about { padding-top: 75px; padding-bottom: 80px; }
+      .treatments { padding: 55px 0 65px; }
+      .treatment-tabs { gap: 6px; }
+      .treatment-tab { padding: 10px 12px; font-size: 10px; }
+      .treatment-cards { grid-template-columns: 1fr; }
+      .treatment-card { min-height: 92px; }
+      .treatment-card h4 { margin-top: 12px; }
+      .before-after { padding-bottom: 80px; }
+      .before-after-grid { grid-template-columns: 1fr; }
+      .expertise-grid { grid-template-columns: 1fr; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .expertise-card { min-height: 0; }
+      .career-item { grid-template-columns: 78px 1fr; gap: 15px; }
+      .publication { grid-template-columns: 48px 1fr; gap: 12px; }
+      .publication a { grid-column: 2; justify-self: start; }
+      .contact-details { grid-template-columns: 1fr; gap: 18px; }
+      .contact-form-grid { grid-template-columns: 1fr; }
+      .contact-form-full { grid-column: auto; }
+      .contact-cta { right: 14px; bottom: 14px; padding: 12px 15px; font-size: 9px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar" aria-label="Ana menü">
+    <a class="brand" href="#top">MESUT <strong>K.</strong></a>
+    <button class="menu-toggle" type="button" aria-label="Menüyü aç" aria-expanded="false" aria-controls="site-menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="site-menu">
+      <a href="#hakkimda">Hakkımda</a>
+      <a href="#tedavi-alanlari">Tedavi alanları</a>
+      <a href="#alanlar">Çalışma alanları</a>
+      <a href="#akademik">Akademik</a>
+      <a href="#blog">Blog</a>
+      <a href="#iletisim">İletişim</a>
+      <a class="admin-link" href="/admin">Yönetici girişi</a>
+    </div>
+  </nav>
+
+  <main>
+    <header class="hero wrap" id="top">
+      <div class="hero-copy">
+        <span class="eyebrow">Ortopedi ve Travmatoloji</span>
+        <h1>Doç. Dr. <span>Mesut Karıksız</span></h1>
+        <p class="hero-subtitle">Klinik deneyim ve akademik çalışmalarıyla ortopedi ve travmatoloji alanında.</p>
+        <div class="hero-meta">
+          <span>Başakşehir Çam ve Sakura Şehir Hastanesi</span>
+          <span>İstanbul</span>
+        </div>
+        <a class="text-link" href="#iletisim">İletişim bilgileri <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="hero-visual">
+        <img src="WhatsApp%20Image%202026-09-15%20at%2016.21.43-Photoroom.png" alt="Doç. Dr. Mesut Karıksız">
+        <span class="visual-caption">Ortopedi ve Travmatoloji</span>
+      </div>
+    </header>
+
+    <section class="about wrap reveal" id="hakkimda">
+      <span class="eyebrow">Hakkımda</span>
+      <blockquote>“Ortopedi ve travmatoloji alanındaki klinik deneyimimi bilimsel çalışmalarla destekliyorum.”</blockquote>
+      <p>Doç. Dr. Mesut Karıksız, ortopedi ve travmatoloji uzmanıdır. Mesleki ve akademik çalışmaları; alt ekstremite deformiteleri, uzatma ve eksternal fiksatör uygulamaları başta olmak üzere ortopedinin farklı alanlarını kapsamaktadır.</p>
+      <span class="eyebrow">Tıp doktoru · Ortopedi ve Travmatoloji uzmanı · Doçent doktor</span>
+    </section>
+
+    <section class="treatments" id="tedavi-alanlari" aria-labelledby="treatments-title">
+      <div class="treatments-inner">
+        <div class="treatments-head reveal">
+          <span class="eyebrow">Ortopedi ve travmatoloji</span>
+          <h2 class="section-title" id="treatments-title">Tedavi alanları</h2>
+        </div>
+        <div class="treatment-tabs" role="tablist" aria-label="Tedavi alanları">
+          <button class="treatment-tab" id="tab-spor" type="button" role="tab" aria-selected="true" aria-controls="panel-spor" tabindex="0">Spor Cerrahisi</button>
+          <button class="treatment-tab" id="tab-protez" type="button" role="tab" aria-selected="false" aria-controls="panel-protez" tabindex="-1">Protez Cerrahisi</button>
+          <button class="treatment-tab" id="tab-kok-hucre" type="button" role="tab" aria-selected="false" aria-controls="panel-kok-hucre" tabindex="-1">Kök Hücre Tedavileri</button>
+          <button class="treatment-tab" id="tab-cocuk" type="button" role="tab" aria-selected="false" aria-controls="panel-cocuk" tabindex="-1">Çocuk Ortopedisi</button>
+          <button class="treatment-tab" id="tab-endoskopik-omurga" type="button" role="tab" aria-selected="false" aria-controls="panel-endoskopik-omurga" tabindex="-1">Endoskopik Omurga</button>
+          <button class="treatment-tab" id="tab-boy-uzatma" type="button" role="tab" aria-selected="false" aria-controls="panel-boy-uzatma" tabindex="-1">Boy Uzatma ve Deformite</button>
+          <button class="treatment-tab" id="tab-ultrason-enjeksiyon" type="button" role="tab" aria-selected="false" aria-controls="panel-ultrason-enjeksiyon" tabindex="-1">Ultrason Eşliğinde Enjeksiyonlar</button>
+        </div>
+        <section class="treatment-panel" id="panel-spor" role="tabpanel" aria-labelledby="tab-spor">
+          <h3>Spor cerrahisi</h3>
+          <div class="treatment-accordion">
+            <details>
+              <summary>Diz</summary>
+              <div class="treatment-cards">
+                <article class="treatment-card has-image">
+                  <img class="treatment-card-image" src="o-n-c-apraz-bag-yaralanmasi-nedenleri-belirtileri-ve-tedavisi.webp" alt="Ön çapraz bağ yaralanması görseli" loading="lazy">
+                  <span>DİZ</span><h4>Ön çapraz bağ yaralanmaları</h4>
+                </article>
+                <article class="treatment-card has-image">
+                  <img class="treatment-card-image" src="meniscal-tear-mri.webp" alt="Menisküs yırtığı MR görüntüsü" loading="lazy">
+                  <span>DİZ</span><h4>Menisküs yırtıkları</h4>
+                </article>
+                <article class="treatment-card has-image">
+                  <img class="treatment-card-image" src="images.jpg" alt="Kıkırdak yaralanması görseli" loading="lazy">
+                  <span>DİZ</span><h4>Kıkırdak yaralanmaları</h4>
+                </article>
+                <article class="treatment-card has-image">
+                  <img class="treatment-card-image" src="egemen-turhan-diz-kapaği-cikmasi-img-4.jpg" alt="Diz kapağı çıkığı görseli" loading="lazy">
+                  <span>DİZ</span><h4>Diz kapağı çıkığı</h4>
+                </article>
+              </div>
+            </details>
+            <details>
+              <summary>Omuz</summary>
+              <div class="treatment-cards">
+                <article class="treatment-card has-image">
+                  <img class="treatment-card-image shoulder-image" src="Omuz-kas-yırtığı-1.jpg" alt="Omuz kas yırtığı görseli" loading="lazy">
+                  <span>OMUZ</span><h4>Kas-tendon yırtıkları</h4>
+                </article>
+                <article class="treatment-card has-image">
+                  <img class="treatment-card-image shoulder-image" src="omuz-cikigi-1024x576.webp" alt="Omuz çıkığı görseli" loading="lazy">
+                  <span>OMUZ</span><h4>Omuz çıkıkları</h4>
+                </article>
+              </div>
+            </details>
+            <details>
+              <summary>Kalça</summary>
+              <div class="treatment-cards">
+                <article class="treatment-card"><span>KALÇA</span><h4>Kalça sıkışma sendromu (FAI)</h4></article>
+                <article class="treatment-card"><span>KALÇA</span><h4>Kalça artroskopisi</h4></article>
+              </div>
+            </details>
+          </div>
+          <p class="treatment-note">Bu sorunların değerlendirilmesi; muayene ve gerekli tetkiklerle kişiye özel yapılır. Uygun tedavi seçenekleri hekim görüşmesinde ele alınır.</p>
+        </section>
+        <section class="treatment-panel" id="panel-protez" role="tabpanel" aria-labelledby="tab-protez" hidden>
+          <h3>Protez cerrahisi</h3>
+          <div class="treatment-cards">
+            <article class="treatment-card has-image">
+              <img class="treatment-card-image prosthesis-image" src="prosthesis-revision.png" alt="Revizyon öncesi gevşemiş kalça protezi röntgeni" loading="lazy">
+              <span>01</span><h4>Revizyon cerrahisi</h4>
+            </article>
+            <article class="treatment-card has-image">
+              <img class="treatment-card-image prosthesis-image" src="knee-osteoarthritis.jpg" alt="Diz kireçlenmesini gösteren röntgen" loading="lazy">
+              <span>02</span><h4>Diz kireçlenmesi</h4>
+            </article>
+            <article class="treatment-card has-image">
+              <img class="treatment-card-image prosthesis-image" src="knee-replacement.jpg" alt="Diz protezi ameliyatı öncesi ve sonrası röntgen görüntüleri" loading="lazy">
+              <span>03</span><h4>Diz protezi</h4>
+            </article>
+            <article class="treatment-card has-image">
+              <img class="treatment-card-image prosthesis-image" src="hip-replacement.jpg" alt="Kalça protezini gösteren pelvis röntgeni" loading="lazy">
+              <span>04</span><h4>Kalça protezi</h4>
+            </article>
+            <article class="treatment-card has-image">
+              <img class="treatment-card-image prosthesis-image" src="hip-osteoarthritis.jpg" alt="Kalça kireçlenmesine ait röntgen, BT ve MR görüntüleri" loading="lazy">
+              <span>05</span><h4>Kalça kireçlenmesi</h4>
+            </article>
+            <article class="treatment-card has-image">
+              <img class="treatment-card-image prosthesis-image" src="ganz-pao.jpg" alt="Ganz ameliyatı sonrası pelvis röntgeni" loading="lazy">
+              <span>06</span><h4>Ganz ameliyatı</h4>
+            </article>
+          </div>
+        </section>
+        <section class="treatment-panel" id="panel-kok-hucre" role="tabpanel" aria-labelledby="tab-kok-hucre" hidden>
+          <h3>Kök hücre tedavileri</h3>
+          <p class="treatment-panel-intro">Kök hücre uygulamalarının uygunluğu, hastanın klinik durumu ve bilimsel kanıtlar doğrultusunda hekim tarafından değerlendirilir.</p>
+          <article class="treatment-card has-image">
+            <img class="treatment-card-image specialty-image" src="stem-cells.jpg" alt="İnsan mezenkimal kök hücrelerinin mikroskop görüntüsü" loading="lazy">
+            <span>TEDAVİ SEÇENEKLERİ</span><h4>Kişiye özel tıbbi değerlendirme</h4>
+          </article>
+          <p class="treatment-note">Her yöntem her hasta için uygun olmayabilir. Tanı ve tedavi planı muayene sonrasında belirlenir.</p>
+        </section>
+        <section class="treatment-panel" id="panel-endoskopik-omurga" role="tabpanel" aria-labelledby="tab-endoskopik-omurga" hidden>
+          <h3>Endoskopik (kapalı) omurga cerrahisi</h3>
+          <div class="treatment-cards">
+            <article class="treatment-card"><span>ENDOSKOPİK OMURGA CERRAHİSİ</span><h4>Endoskopik (kapalı) bel fıtığı ameliyatı</h4></article>
+            <article class="treatment-card"><span>ENDOSKOPİK OMURGA CERRAHİSİ</span><h4>Endoskopik (kapalı) dar kanal ameliyatı</h4></article>
+            <article class="treatment-card"><span>ENDOSKOPİK OMURGA CERRAHİSİ</span><h4>Endoskopik (kapalı) bel kayması ameliyatı</h4></article>
+            <article class="treatment-card"><span>ENJEKSİYON UYGULAMALARI</span><h4>Transforaminal enjeksiyonlar (nokta atışı)</h4></article>
+            <article class="treatment-card"><span>ENJEKSİYON UYGULAMALARI</span><h4>Kaudal enjeksiyonlar</h4></article>
+            <article class="treatment-card"><span>GİRİŞİMSEL TEDAVİLER</span><h4>Radyofrekans faset ablasyonu</h4></article>
+          </div>
+        </section>
+        <section class="treatment-panel" id="panel-boy-uzatma" role="tabpanel" aria-labelledby="tab-boy-uzatma" hidden>
+          <h3>Boy uzatma ve deformite cerrahisi</h3>
+          <div class="treatment-cards">
+            <article class="treatment-card"><span>BOY UZATMA</span><h4>Boy uzatma</h4></article>
+            <article class="treatment-card"><span>DEFORMİTE CERRAHİSİ</span><h4>Konjenital tibia psödoartrozu</h4></article>
+            <article class="treatment-card"><span>DEFORMİTE CERRAHİSİ</span><h4>Hemimeli</h4></article>
+            <article class="treatment-card"><span>KEMİK ENFEKSİYONLARI</span><h4>Osteomiyelit (kemik enfeksiyonu)</h4></article>
+            <article class="treatment-card"><span>DEFORMİTE CERRAHİSİ</span><h4>Akondroplazi (cücelik)</h4></article>
+            <article class="treatment-card"><span>DEFORMİTE CERRAHİSİ</span><h4>Bacak eğrilikleri</h4></article>
+          </div>
+        </section>
+        <section class="treatment-panel" id="panel-ultrason-enjeksiyon" role="tabpanel" aria-labelledby="tab-ultrason-enjeksiyon" hidden>
+          <h3>Ultrason eşliğinde enjeksiyonlar</h3>
+          <div class="treatment-cards">
+            <article class="treatment-card"><span>GİRİŞİMSEL TEDAVİLER</span><h4>Ultrason altında enjeksiyon uygulamaları</h4></article>
+          </div>
+        </section>
+        <section class="treatment-panel" id="panel-cocuk" role="tabpanel" aria-labelledby="tab-cocuk" hidden>
+          <h3>Çocuk ortopedisi</h3>
+          <div class="treatment-cards">
+            <article class="treatment-card has-image">
+              <img class="treatment-card-image specialty-image" src="pediatric-hip-dysplasia.jpg" alt="Kalça displazisini gösteren röntgen görüntüsü" loading="lazy">
+              <span>ÇOCUK ORTOPEDİSİ</span><h4>Kalça çıkığı</h4>
+            </article>
+            <article class="treatment-card has-image">
+              <img class="treatment-card-image specialty-image" src="clubfoot-openstax.jpg" alt="Çarpık ayak (PEV) klinik görünümü" loading="lazy">
+              <span>ÇOCUK ORTOPEDİSİ</span><h4>Çarpık ayak (PEV)</h4>
+            </article>
+            <article class="treatment-card"><span>ÇOCUK ORTOPEDİSİ</span><h4>Serebral palsi</h4></article>
+            <article class="treatment-card has-image">
+              <img class="treatment-card-image specialty-image" src="hip-arthroscopy.png" alt="Kalça artroskopisinde kullanılan aletleri gösteren ameliyat sırası röntgen görüntüsü" loading="lazy">
+              <span>ORTOPEDİ</span><h4>Kalça artroskopisi</h4>
+            </article>
+          </div>
+        </section>
+        <p class="treatment-note">Bu başlıklar genel bilgilendirme amaçlıdır. Tanı ve tedavi seçenekleri hekim muayenesiyle kişiye özel belirlenir.</p>
+      </div>
+    </section>
+
+    <section class="before-after wrap" aria-labelledby="before-after-title">
+      <div class="before-after-head reveal">
+        <span class="eyebrow">Klinik görseller</span>
+        <h2 class="section-title" id="before-after-title">Öncesi / Sonrası</h2>
+      </div>
+      <div class="before-after-grid">
+        <figure class="case-card reveal">
+          <img src="galeri/dcc.png" alt="Tedavi öncesi ve sonrası bacak görünümü">
+          <figcaption>
+            <h3>Alt ekstremite görünümü</h3>
+            <div class="case-labels"><span>Öncesi</span><span>Sonrası</span></div>
+          </figcaption>
+        </figure>
+        <figure class="case-card reveal">
+          <img src="galeri/image.png" alt="Tedavi öncesi ve sonrası bacak uzunluğu ve diz görünümü">
+          <figcaption>
+            <h3>Uzuv uzunluğu ve diz görünümü</h3>
+            <div class="case-labels"><span>Öncesi</span><span>Sonrası</span></div>
+          </figcaption>
+        </figure>
+        <figure class="case-card reveal">
+          <img src="galeri/s.png" alt="Tedavi öncesi ve sonrası röntgen ve klinik görünüm">
+          <figcaption>
+            <h3>Röntgen ve klinik görünüm</h3>
+            <div class="case-labels"><span>Öncesi</span><span>Sonrası</span></div>
+          </figcaption>
+        </figure>
+        <figure class="case-card reveal">
+          <img src="galeri/ssf.png" alt="Tedavi öncesi ve sonrası bacak dizilimi">
+          <figcaption>
+            <h3>Bacak dizilimi</h3>
+            <div class="case-labels"><span>Öncesi</span><span>Sonrası</span></div>
+          </figcaption>
+        </figure>
+        <figure class="case-card reveal">
+          <img src="galeri/wdd.png" alt="Tedavi öncesi ve sonrası ayak görünümü ve röntgen">
+          <figcaption>
+            <h3>Ayak görünümü ve röntgen</h3>
+            <div class="case-labels"><span>Öncesi</span><span>Sonrası</span></div>
+          </figcaption>
+        </figure>
+        <figure class="case-card reveal">
+          <img src="image.png" alt="Tedavi öncesi ve sonrası klinik görünüm">
+          <figcaption>
+            <h3>Klinik görünüm</h3>
+            <div class="case-labels"><span>Öncesi</span><span>Sonrası</span></div>
+          </figcaption>
+        </figure>
+      </div>
+      <p class="case-note">Görseller bilgilendirme amaçlıdır. Her hastanın değerlendirme ve tedavi süreci kişiye özeldir.</p>
+    </section>
+
+    <section class="expertise wrap" id="alanlar">
+      <div class="expertise-head reveal">
+        <div>
+          <span class="eyebrow">Mesleki ilgi alanları</span>
+          <h2 class="section-title">Çalışma alanları</h2>
+        </div>
+        <p class="section-intro">Özgeçmişinde yer alan klinik ve akademik çalışmalar doğrultusunda öne çıkan başlıklar.</p>
+      </div>
+      <div class="expertise-grid">
+        <article class="expertise-card reveal">
+          <span class="number">01</span>
+          <h3>Alt ekstremite deformiteleri</h3>
+          <p>Deformite değerlendirmesi ve düzeltme yöntemleri üzerine çalışmalar.</p>
+        </article>
+        <article class="expertise-card reveal">
+          <span class="number">02</span>
+          <h3>Uzuv uzatma ve eksternal fiksatör</h3>
+          <p>Eksternal fiksatörler, uzatma uygulamaları ve bilgisayar destekli planlama.</p>
+        </article>
+        <article class="expertise-card reveal">
+          <span class="number">03</span>
+          <h3>Ortopedik travma</h3>
+          <p>Kırık tedavisi, travma sonrası komplikasyonlar ve kemik iyileşmesi.</p>
+        </article>
+        <article class="expertise-card reveal">
+          <span class="number">04</span>
+          <h3>Omuz ve diz</h3>
+          <p>Omuz instabilitesi, artroskopik cerrahi ve spor yaralanmaları üzerine akademik çalışmalar.</p>
+        </article>
+        <article class="expertise-card reveal">
+          <span class="number">05</span>
+          <h3>El ve üst ekstremite</h3>
+          <p>El, el bileği ve üst ekstremite ortopedisine ilişkin bilimsel çalışmalar.</p>
+        </article>
+        <article class="expertise-card reveal">
+          <span class="number">06</span>
+          <h3>Çocuk ortopedisi</h3>
+          <p>Çocuklarda ortopedik sorunlar ve alçı tedavisi üzerine yayınlar.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="career" id="akademik">
+      <div class="wrap career-grid">
+        <div class="reveal">
+          <span class="eyebrow">Eğitim ve mesleki geçmiş</span>
+          <h2 class="section-title">Deneyim</h2>
+          <p class="section-intro">Tıp eğitimi, uzmanlık ve görev bilgileri özgeçmişinde yer aldığı şekildedir.</p>
+          <div class="memberships" aria-label="Üyesi olduğu bilimsel kuruluşlar">
+            <span>TOTBİD</span>
+            <span>TOTDER</span>
+            <span>ASAMI</span>
+            <span>TÜSYAD</span>
+            <span>Pediatrik Ortopedi</span>
+            <span>Endoskopik Omurga Cerrahisi Derneği</span>
+          </div>
+        </div>
+        <div class="career-list reveal">
+          <article class="career-item">
+            <span class="career-year">2001–2007</span>
+            <div><h3>Tıp Fakültesi</h3><p>Dicle Üniversitesi</p></div>
+          </article>
+          <article class="career-item">
+            <span class="career-year">2011–2017</span>
+            <div><h3>Araştırma görevlisi</h3><p>Tekirdağ Namık Kemal Üniversitesi, Ortopedi ve Travmatoloji Anabilim Dalı</p></div>
+          </article>
+          <article class="career-item">
+            <span class="career-year">2017</span>
+            <div><h3>Tıpta uzmanlık</h3><p>Tekirdağ Namık Kemal Üniversitesi, Ortopedi ve Travmatoloji</p></div>
+          </article>
+          <article class="career-item">
+            <span class="career-year">2017–2021</span>
+            <div><h3>Ortopedi ve Travmatoloji uzmanı</h3><p>Gazi Yaşargil Eğitim ve Araştırma Hastanesi</p></div>
+          </article>
+          <article class="career-item">
+            <span class="career-year">2021–2023</span>
+            <div><h3>Ortopedi ve Travmatoloji uzmanı</h3><p>Özel Sultan Hastanesi</p></div>
+          </article>
+          <article class="career-item">
+            <span class="career-year">2023–</span>
+            <div><h3>Ortopedi ve Travmatoloji uzmanı</h3><p>Başakşehir Çam ve Sakura Şehir Hastanesi</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="publications wrap">
+      <div class="reveal">
+        <span class="eyebrow">Bilimsel çalışmalar</span>
+        <h2 class="section-title">Seçilmiş yayınlar</h2>
+        <p class="section-intro">Özgeçmişte yer alan hakemli dergi makalelerinden seçilmiş örnekler.</p>
+      </div>
+      <div class="publication-list">
+        <article class="publication reveal">
+          <span class="publication-year">2025</span>
+          <div><h3>Treatment and clinical outcomes in lower extremity necrotizing soft tissue infection</h3><p>European Journal of Trauma and Emergency Surgery</p></div>
+          <a href="https://doi.org/10.1007/s00068-025-02835-5" target="_blank" rel="noopener noreferrer" aria-label="Makale DOI bağlantısını aç">DOI ↗</a>
+        </article>
+        <article class="publication reveal">
+          <span class="publication-year">2025</span>
+          <div><h3>Effect of coloring the long-arm cast on depression, anxiety, and quality of life in children treated with a cast for forearm fractures</h3><p>Annals of Clinical and Analytical Medicine</p></div>
+          <a href="https://doi.org/10.4328/ACAM.22596" target="_blank" rel="noopener noreferrer" aria-label="Makale DOI bağlantısını aç">DOI ↗</a>
+        </article>
+        <article class="publication reveal">
+          <span class="publication-year">2025</span>
+          <div><h3>Antibacterial evaluation of antibiotic-coated titanium and stainless steel implants in orthopaedic application: a dip-coating approach</h3><p>Journal of Orthopaedic Surgery and Research</p></div>
+          <a href="https://doi.org/10.1186/s13018-025-05467-y" target="_blank" rel="noopener noreferrer" aria-label="Makale DOI bağlantısını aç">DOI ↗</a>
+        </article>
+        <article class="publication reveal">
+          <span class="publication-year">2024</span>
+          <div><h3>Hook assisted reduction in cephalomedullary nailing without traction table</h3><p>Acta Orthopaedica Brasileira</p></div>
+          <a href="https://doi.org/10.1590/1413-785220243202e274533" target="_blank" rel="noopener noreferrer" aria-label="Makale DOI bağlantısını aç">DOI ↗</a>
+        </article>
+        <article class="publication reveal">
+          <span class="publication-year">2023</span>
+          <div><h3>Mid-term follow-up results of gradual capitate lengthening for the treatment of stage IIIA Kienbock's disease</h3><p>Journal of Orthopaedic Surgery</p></div>
+          <a href="https://doi.org/10.1177/10225536231166205" target="_blank" rel="noopener noreferrer" aria-label="Makale DOI bağlantısını aç">DOI ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="blog" id="blog">
+      <div class="wrap">
+        <div class="blog-head reveal">
+          <div>
+            <span class="eyebrow">Bilgilendirme yazıları</span>
+            <h2 class="section-title">Blog</h2>
+          </div>
+          <a class="blog-admin-link" href="/admin">Blog yönetimi →</a>
+        </div>
+        <div class="blog-grid" id="blog-posts" aria-live="polite">
+          <p class="blog-empty">Yazılar yükleniyor…</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="iletisim">
+      <div class="wrap">
+        <div class="contact-grid">
+          <div class="reveal">
+            <span class="eyebrow">İletişim</span>
+            <h2 class="section-title">Bilgi ve iletişim</h2>
+            <div class="contact-details">
+              <div><span class="eyebrow">Telefon</span><a href="tel:+905062918049">0506 291 80 49</a></div>
+              <div><span class="eyebrow">E-posta</span><a href="mailto:mesutkariksiz@gmail.com">mesutkariksiz@gmail.com</a></div>
+              <div><span class="eyebrow">Instagram</span><a href="https://www.instagram.com/assoc.prof.mesutkariksiz/" target="_blank" rel="noopener noreferrer">@assoc.prof.mesutkariksiz ↗</a></div>
+            </div>
+          </div>
+          <div class="hospital reveal">
+            <span class="eyebrow">Görev yeri</span>
+            <strong>Başakşehir Çam ve Sakura Şehir Hastanesi</strong>
+            <p>Ortopedi ve Travmatoloji Anabilim Dalı · İstanbul</p>
+          </div>
+        </div>
+        <form class="contact-form reveal" id="contact-form">
+          <h3>İletişim talebi gönderin</h3>
+          <div class="contact-form-grid">
+            <label>Ad soyad
+              <input name="fullName" autocomplete="name" required minlength="2" maxlength="100">
+            </label>
+            <label>Telefon
+              <input name="phone" type="tel" autocomplete="tel" required maxlength="30">
+            </label>
+            <label class="contact-form-full">E-posta (isteğe bağlı)
+              <input name="email" type="email" autocomplete="email" maxlength="254">
+            </label>
+            <label class="contact-form-full">Mesaj
+              <textarea name="message" required maxlength="2000"></textarea>
+            </label>
+          </div>
+          <p class="contact-form-note">Bilgileriniz iletişim talebinize yanıt vermek için kullanılır. Lütfen sağlık tanısı, tetkik sonucu veya kimlik bilgisi paylaşmayın.</p>
+          <label class="contact-consent">
+            <input name="consent" type="checkbox" required>
+            <span>İletişim talebimin yanıtlanması amacıyla kişisel verilerimin işlenmesini kabul ediyorum.</span>
+          </label>
+          <div class="contact-form-actions">
+            <button type="submit">Gönder</button>
+            <p class="contact-form-message" id="contact-form-message" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+        <p class="disclaimer">Bu sayfadaki bilgiler genel bilgilendirme amacı taşır; tanı ve tedavi için hekiminize başvurunuz.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>Doç. Dr. Mesut Karıksız · Ortopedi ve Travmatoloji</footer>
+  <a class="contact-cta" id="contact-cta" href="#contact-form" aria-label="İletişim formunu doldur">
+    Formu doldur <span aria-hidden="true">·</span> Bize ulaş
+  </a>
+
+  <script>
+    const navbar = document.querySelector('.navbar');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const closeMenu = () => {
+      navbar.classList.remove('menu-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Menüyü aç');
+    };
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navbar.classList.toggle('menu-open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Menüyü kapat' : 'Menüyü aç');
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && navbar.classList.contains('menu-open')) {
+        closeMenu();
+        menuToggle.focus();
+      }
+    });
+    const updateNavbar = () => navbar.classList.toggle('scrolled', window.scrollY > 20);
+    updateNavbar();
+    window.addEventListener('scroll', updateNavbar, { passive: true });
+
+    const treatmentTabs = [...document.querySelectorAll('.treatment-tab')];
+    const activateTreatmentTab = tab => {
+      treatmentTabs.forEach(item => {
+        const selected = item === tab;
+        item.setAttribute('aria-selected', String(selected));
+        item.tabIndex = selected ? 0 : -1;
+        document.getElementById(item.getAttribute('aria-controls')).hidden = !selected;
+      });
+    };
+    treatmentTabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => activateTreatmentTab(tab));
+      tab.addEventListener('keydown', event => {
+        let nextIndex = index;
+        if (event.key === 'ArrowRight') nextIndex = (index + 1) % treatmentTabs.length;
+        else if (event.key === 'ArrowLeft') nextIndex = (index - 1 + treatmentTabs.length) % treatmentTabs.length;
+        else if (event.key === 'Home') nextIndex = 0;
+        else if (event.key === 'End') nextIndex = treatmentTabs.length - 1;
+        else return;
+        event.preventDefault();
+        treatmentTabs[nextIndex].focus();
+        activateTreatmentTab(treatmentTabs[nextIndex]);
+      });
+    });
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(element => revealObserver.observe(element));
+
+    const blogPosts = document.getElementById('blog-posts');
+    const renderBlogPost = post => {
+      const article = document.createElement('article');
+      article.className = 'blog-card';
+      if (post.imageData) {
+        const image = document.createElement('img');
+        image.src = post.imageData;
+        image.alt = post.title;
+        article.append(image);
+      }
+      const date = document.createElement('time');
+      date.dateTime = post.publishedAt;
+      date.textContent = new Intl.DateTimeFormat('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' }).format(new Date(post.publishedAt));
+      const title = document.createElement('h3');
+      title.textContent = post.title;
+      const excerpt = document.createElement('p');
+      excerpt.textContent = post.excerpt;
+      const content = document.createElement('p');
+      content.className = 'blog-content';
+      content.textContent = post.content;
+      article.append(date, title, excerpt, content);
+      return article;
+    };
+    fetch('/api/posts')
+      .then(response => {
+        if (!response.ok) throw new Error('Blog yazıları yüklenemedi.');
+        return response.json();
+      })
+      .then(posts => {
+        blogPosts.replaceChildren();
+        if (!posts.length) {
+          const empty = document.createElement('p');
+          empty.className = 'blog-empty';
+          empty.textContent = 'Henüz yayımlanmış bir yazı bulunmuyor.';
+          blogPosts.append(empty);
+          return;
+        }
+        posts.forEach(post => blogPosts.append(renderBlogPost(post)));
+      })
+      .catch(error => {
+        console.error(error);
+        blogPosts.replaceChildren();
+        const message = document.createElement('p');
+        message.className = 'blog-empty';
+        message.textContent = 'Blog yazıları şu anda yüklenemiyor.';
+        blogPosts.append(message);
+      });
+
+    const contactForm = document.getElementById('contact-form');
+    const contactFormMessage = document.getElementById('contact-form-message');
+    contactForm.addEventListener('submit', async event => {
+      event.preventDefault();
+      const submit = contactForm.querySelector('button[type="submit"]');
+      submit.disabled = true;
+      contactFormMessage.className = 'contact-form-message';
+      contactFormMessage.textContent = '';
+      try {
+        const csrfResponse = await fetch('/api/csrf', { credentials: 'same-origin', cache: 'no-store' });
+        const csrfResult = await csrfResponse.json();
+        if (!csrfResponse.ok) throw new Error(csrfResult.error || 'Güvenlik anahtarı alınamadı.');
+
+        const fields = new FormData(contactForm);
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          credentials: 'same-origin',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': csrfResult.csrfToken,
+          },
+          body: JSON.stringify({
+            fullName: fields.get('fullName'),
+            phone: fields.get('phone'),
+            email: fields.get('email'),
+            message: fields.get('message'),
+            consent: fields.has('consent'),
+          }),
+        });
+        const result = await response.json();
+        if (!response.ok) throw new Error(result.error || 'Form gönderilemedi.');
+
+        contactForm.reset();
+        contactFormMessage.classList.add('success');
+        contactFormMessage.textContent = result.message;
+      } catch (error) {
+        contactFormMessage.classList.add('error');
+        contactFormMessage.textContent = error.message || 'Form gönderilemedi. Lütfen tekrar deneyin.';
+      } finally {
+        submit.disabled = false;
+      }
+    });
+
+    const contactCta = document.getElementById('contact-cta');
+    const contactCtaObserver = new IntersectionObserver(([entry]) => {
+      contactCta.classList.toggle('contact-cta-hidden', entry.isIntersecting);
+    }, { threshold: 0.1 });
+    contactCtaObserver.observe(contactForm);
+  </script>
+</body>
+</html>

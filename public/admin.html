@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Blog Yönetimi | Doç. Dr. Mesut Karıksız</title>
+  <link rel="stylesheet" href="/fonts.css">
+  <style>
+    :root { --paper: #f7f4ed; --ink: #2e2a24; --dim: #514d46; --line: rgba(46,42,36,.18); --sage: #66715d; --deep: #353d32; --gold: #a6885a; --serif: "Cormorant", Georgia, serif; --sans: "Montserrat", Arial, sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 600 17px/1.65 var(--serif); }
+    a { color: inherit; text-decoration: none; }
+    .topbar { display: flex; justify-content: space-between; align-items: center; padding: 20px clamp(20px, 6vw, 80px); border-bottom: 1px solid var(--line); }
+    .brand { font: 700 18px/1 var(--serif); letter-spacing: .1em; }
+    .topbar a:last-child { color: var(--sage); font: 700 10px/1.5 var(--sans); letter-spacing: .08em; }
+    main { width: min(1050px, calc(100% - 40px)); margin: 55px auto 100px; }
+    .eyebrow { color: var(--dim); font: 700 10px/1.5 var(--sans); letter-spacing: .14em; text-transform: uppercase; }
+    h1 { margin: 8px 0 24px; font: 700 clamp(32px, 5vw, 54px)/1.1 var(--serif); }
+    h2 { font: 700 28px/1.2 var(--serif); }
+    .panel, .login-card { padding: clamp(22px, 4vw, 38px); border: 1px solid var(--line); background: #fffdf8; }
+    .login-card { max-width: 470px; margin: 50px auto; }
+    .form-grid { display: grid; gap: 17px; }
+    label { display: grid; gap: 6px; font: 700 11px/1.5 var(--sans); letter-spacing: .03em; }
+    input, textarea, select { width: 100%; padding: 12px 13px; border: 1px solid #bdb8ae; border-radius: 0; background: white; color: var(--ink); font: 500 16px/1.5 var(--serif); }
+    textarea { min-height: 110px; resize: vertical; }
+    #content { min-height: 240px; }
+    input:focus, textarea:focus, select:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 20px; }
+    button { min-height: 42px; padding: 10px 17px; border: 1px solid var(--deep); background: var(--deep); color: white; cursor: pointer; font: 700 10px/1.5 var(--sans); letter-spacing: .08em; text-transform: uppercase; }
+    button.secondary { background: transparent; color: var(--deep); }
+    button.danger { border-color: #9c3930; background: #9c3930; }
+    button:disabled { opacity: .6; cursor: wait; }
+    .message { min-height: 27px; margin: 10px 0; color: #8b332c; font-weight: 700; }
+    .message.success { color: #315e39; }
+    .dashboard-head { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .dashboard-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr); gap: 24px; align-items: start; }
+    .post-list { display: grid; gap: 12px; }
+    .post-row { padding: 17px; border: 1px solid var(--line); background: #fffdf8; }
+    .post-row h3 { margin: 0 0 4px; font: 700 21px/1.25 var(--serif); }
+    .post-row p { margin: 0 0 12px; color: var(--dim); font-size: 14px; }
+    .post-row img { display: block; width: min(100%, 240px); aspect-ratio: 16 / 9; margin-bottom: 12px; object-fit: cover; }
+    .post-status { color: var(--sage); font: 700 9px/1.5 var(--sans); letter-spacing: .1em; text-transform: uppercase; }
+    .post-row .actions { margin-top: 12px; }
+    .post-row button { min-height: 36px; padding: 7px 12px; }
+    .inbox-panel { margin-top: 28px; }
+    .inbox-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .inbox-heading h2 { margin: 4px 0 0; }
+    .contact-list { display: grid; gap: 12px; margin-top: 18px; }
+    .contact-submission { padding: 17px; border: 1px solid var(--line); background: #fffdf8; }
+    .contact-submission-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 18px; align-items: baseline; }
+    .contact-submission h3 { margin: 0; font: 700 21px/1.25 var(--serif); }
+    .contact-submission time, .contact-submission-status { color: var(--dim); font: 700 9px/1.5 var(--sans); letter-spacing: .06em; }
+    .contact-submission-status.unread { color: #8b332c; }
+    .contact-submission-meta { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 8px; font-size: 14px; }
+    .contact-submission-meta a { color: var(--sage); overflow-wrap: anywhere; }
+    .contact-submission-message { margin: 12px 0 0; white-space: pre-line; overflow-wrap: anywhere; }
+    .contact-submission .actions { margin-top: 12px; }
+    .contact-submission button { min-height: 36px; padding: 7px 12px; }
+    .image-preview { display: grid; gap: 10px; }
+    .image-preview img { width: min(100%, 360px); max-height: 240px; object-fit: contain; object-position: left center; }
+    [hidden] { display: none !important; }
+    @media (max-width: 760px) { .dashboard-grid { grid-template-columns: 1fr; } .dashboard-head { align-items: flex-start; } }
+    @media (max-width: 480px) { .dashboard-head { flex-direction: column; } main { margin-top: 35px; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">MESUT <span style="color:var(--gold)">K.</span> · BLOG</a>
+    <a href="/">← Siteye dön</a>
+  </header>
+  <main>
+    <section id="login-view" class="login-card" hidden>
+      <span class="eyebrow">Yönetici erişimi</span>
+      <h1>Blog yönetimi</h1>
+      <p>Yönetici parolanızla giriş yapın.</p>
+      <form id="login-form" class="form-grid">
+        <label>Parola<input name="password" type="password" autocomplete="current-password" required maxlength="200"></label>
+        <button type="submit">Giriş yap</button>
+      </form>
+      <p class="message" id="login-message" role="status"></p>
+    </section>
+
+    <section id="dashboard-view" hidden>
+      <div class="dashboard-head">
+        <div><span class="eyebrow">İçerik yönetimi</span><h1>Blog yazıları</h1></div>
+        <button class="secondary" id="logout-button" type="button">Güvenli çıkış</button>
+      </div>
+      <p class="message" id="dashboard-message" role="status"></p>
+      <div class="dashboard-grid">
+        <section>
+          <h2>Yazılar</h2>
+          <div class="post-list" id="post-list"></div>
+        </section>
+        <section class="panel">
+          <span class="eyebrow">Yazı formu</span>
+          <h2 id="form-title">Yeni yazı</h2>
+          <form id="post-form" class="form-grid">
+            <input type="hidden" name="id">
+            <label>Başlık<input name="title" required maxlength="160"></label>
+            <label>Kısa özet<textarea name="excerpt" required maxlength="300"></textarea></label>
+            <label>İçerik<textarea id="content" name="content" required maxlength="20000"></textarea></label>
+            <label>Yazı görseli (JPEG, PNG veya WebP; en fazla 2 MB)
+              <input id="post-image" type="file" accept="image/jpeg,image/png,image/webp">
+            </label>
+            <div class="image-preview" id="image-preview" hidden>
+              <img id="image-preview-image" alt="Yazı görseli önizlemesi">
+              <button class="secondary" type="button" id="remove-image-button">Görseli kaldır</button>
+            </div>
+            <label>Yayın durumu
+              <select name="status"><option value="published">Yayımla</option><option value="draft">Taslak</option></select>
+            </label>
+            <div class="actions">
+              <button type="submit">Kaydet</button>
+              <button class="secondary" type="button" id="new-post-button">Yeni yazı</button>
+            </div>
+          </form>
+        </section>
+      </div>
+      <section class="panel inbox-panel">
+        <div class="inbox-heading">
+          <div><span class="eyebrow">Gelen kutusu</span><h2>İletişim talepleri</h2></div>
+          <button class="secondary" type="button" id="refresh-contact-button">Yenile</button>
+        </div>
+        <div class="contact-list" id="contact-list" aria-live="polite"></div>
+      </section>
+    </section>
+  </main>
+  <script src="/public/admin.js" defer></script>
+</body>
+</html>
